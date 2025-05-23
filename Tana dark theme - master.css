@@ -1,0 +1,160 @@
+:root {
+    --colorGray825: #2c2c2c;
+    --colorGray300: #999;
+    --colorSidebarDockedBackground: #323232 !important;
+    --colorSidebarBackground:#212121;
+    --colorCanvasBackground: #212121 !important;
+    --colorSidebarPinnedEmptyBackground: var(--colorGray725) !important;
+    --rm-strong__color: #508bb5;
+    --rm-strong__font-weight: 700;
+    /* --colorCanvasBackground: #323232; */
+    --colorUIStroke: var(--colorGray600) !important;
+    --colorImageContainerBackground: transparent;
+    --colorSidebarFadeColor: var(--colorGray750) !important;
+    --colorBulletExpandLine: var(--colorGray650) !important;
+    --colorBulletExpandLineHoverBackground: var(--colorGray650) !important;
+    --colorUITupleStroke: var(--colorGray700) !important;
+  }
+  
+  
+  em, i {
+      color: #fc5963;
+  }
+  
+  .panelContent {
+     font-family: 'Calendas Plus';
+     font-family: 'Artifex CF';
+     /*font-family: 'Bookerly';   */
+     font-size: 1.12rem;
+     flex-grow: 1;
+  }
+  
+  
+  /* Independent scrolling styling */
+  /*html .PanelStack-module_horizontalSplit__N2ysk>* {*/
+      /* min-width: 50%; */
+  /*    overflow-y: scroll;*/
+  /*    max-height: calc(100vh - var(--topBarHeight) - var(--panelDividerSize) - var(--panelDividerSize));*/
+  /*}*/
+  /*.listContentItem span {*/
+  /*    overflow-wrap: anywhere;*/
+  /*}*/
+  
+  /* Quote tag styling — author unknown */
+  [data-tag-name="quote"] > .contentSide {
+      padding-left: 15px;
+      position: relative;
+  }
+  [data-tag-name="quote"] > .contentSide::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--bulletColor1Dimmed);
+      border-radius: 3px;
+  }
+  
+  b {
+      color: var(--bulletColor1);
+      /* opacity: .8; */
+  }
+  
+  /* Heading Styles -- Doesn't seem to work :( */
+  .NodeAsListElement-module_isOutlinerSection__RJZAN:has(.NodeAsListElement-module_sectionHeading__rNvui) .NodeAsListElement-module_sectionHeading__rNvui {
+    color: var(--rm-strong__color) !important;
+  }
+
+
+  /* Code block mods*/
+  .RelatedContent-module_el__5Kxfk .darkmodeSyntaxHighlighter .hljs,
+  .panelContent .darkmodeSyntaxHighlighter .hljs {
+      background: #262626;
+      font-family: Source Code Pro;
+      font-size: var(--size200);
+  }
+  .isDarkMode b {
+      --hl-color: var(--rm-strong__color);
+      /* opacity: 1.0; */
+  }
+  .bulletAndContent:not(:has([style*="--bulletColor"])) b {
+      color: var(--hl-color, #d4331e);
+  }
+  
+  
+  /*Adding a little space after border at the end of a tag*/
+  /*.contentFromTemplate>div>:last-child:not(.istuple) {*/
+  /*    margin-bottom: 1rem;*/
+  /*}*/
+  
+  /* Hide the bullets when zoomed into a node that has the #longform tag */
+  div[data-is-panel-header="true"]:has(span[data-tag="longform"]) + div .bullet {
+      display: none;
+  }
+  
+  /* Format the text for a zoomed in node that has the #longform tag */
+  div[data-is-panel-header="true"]:has(span[data-tag="longform"]) + div div[data-depth="2"] {
+      /* font-face: 'fontnamegoeshere'; */  /* uncomment this line and replace fontnamegoes here with any font installed on your device */
+      text-indent: 2rem; /* first line indent*/
+      margin-bottom: 1rem; /* amount of space between paragraphs */
+      font-size: 1.3rem;
+      line-height: 1.5em; /* the space between lines of text */
+      /**max-width: 55ch; /* number of characters per line */
+      text-align: justify;    
+  }
+  
+  /* Bigger images — author unknown*/
+  .mediaitem {
+      max-height: min(30em, 30vh);
+      height: auto;
+      width: auto;
+  }
+  
+  .mediaitem > img {
+      max-height: min(30em, 30vh);
+  }
+  
+  .mediaitem.medium + div {
+     opacity: 1;
+  }
+      
+  .mediaitem.medium.pdfViewer {
+    display: inline-block;
+  }
+  
+  .contentSide.expanded > div > .contentLine > div > div > .mediaitem {
+      display: none;
+  }
+  
+  .mediaitem.medium {
+      max-height: none;
+  }
+  
+  .mediaitem.medium > img {
+      max-height: none;
+      max-width: 100%;
+  }
+  
+  /* This rules changes the aspect ratio of the pdf preview to be larger if you would like that as well. */
+  .mediaitem.medium.pdfViewer {
+    aspect-ratio: 3.2/4;
+    max-height: 80vh;
+    max-width: 100%;
+    height: auto;
+    width: 600px;
+  }
+  
+  /* You don't need to keep the following CSS, I just added it to fade out the text that is adjacent to the "thumbnail" image. */
+  .mediaitem + div {
+      opacity: 0.3;
+  }
+  
+  /*side bar mods*/
+  .UnifiedSidebar-module_el__NWvG0 .UnifiedSidebar-module_wrapper__lP7QI {
+    background-color: #212121 !important;
+  }
+  .UnifiedSidebar-module_el__NWvG0 {
+    background-color: #212121 !important;
+    font-size: 13px !important;
+  }
+  
